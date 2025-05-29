@@ -7,8 +7,8 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { AuthProvider } from "./contexts/AuthContext";
 import { ShipsProvider } from "./contexts/ShipsContext";
 import { ComponentsProvider } from "./contexts/ComponentsContext";
-import { JobsProvider } from "./contexts/JobsContext";
 import { NotificationProvider } from "./contexts/NotificationContext";
+import { JobsProvider } from "./contexts/JobsContext";
 import ProtectedRoute from "./components/Authentication/ProtectedRoute";
 import Layout from "./components/Layout/Layout";
 import ErrorBoundary from "./components/Common/ErrorBoundary";
@@ -39,8 +39,8 @@ const App = () => (
           <AuthProvider>
             <ShipsProvider>
               <ComponentsProvider>
-                <JobsProvider>
-                  <NotificationProvider>
+                <NotificationProvider>
+                  <JobsProvider>
                     <Routes>
                       <Route path="/login" element={<LoginPage />} />
                       <Route path="/" element={<ProtectedRoute><Layout /></ProtectedRoute>}>
@@ -53,8 +53,8 @@ const App = () => (
                       </Route>
                       <Route path="*" element={<NotFound />} />
                     </Routes>
-                  </NotificationProvider>
-                </JobsProvider>
+                  </JobsProvider>
+                </NotificationProvider>
               </ComponentsProvider>
             </ShipsProvider>
           </AuthProvider>
